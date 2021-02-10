@@ -50,15 +50,13 @@ const createTileLayer = (
   darkMode: boolean
 ): TileLayer => {
   return leaflet.tileLayer(
-    `https://{s}.basemaps.cartocdn.com/${
-      darkMode ? "dark_all" : "light_all"
-    }/{z}/{x}/{y}${leaflet.Browser.retina ? "@2x.png" : ".png"}`,
+    `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
     {
       attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: "abcd",
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy;',
+      subdomains: "abc",
       minZoom: 0,
-      maxZoom: 20,
+      maxZoom: 18,
     }
   );
 };
